@@ -1,9 +1,9 @@
-🚗 Body Control Module using CAN Protocol (ARM LPC2129)
-📌 Overview
+BODY CONTROL MODULE USING CAN PROTOCOL_(ARM LPC2129)
+Overview :
 This project implements a **Body Control Module (BCM)** using the **CAN (Controller Area Network) protocol** on the **LPC2129 ARM microcontroller**.
 The system simulates automotive control functions where a **master (transmitter node)** sends commands to multiple **slave nodes (LED, Buzzer, Wiper)** via CAN communication.
 
-⚙️ Features
+Features :
 
 * CAN-based communication between multiple nodes
 * Distributed control system architecture
@@ -12,13 +12,13 @@ The system simulates automotive control functions where a **master (transmitter 
 * Independent node operation (LED, Buzzer, Wiper)
 * Efficient message-based control using CAN IDs
 
-🧠 System Architecture
-🔹 Transmitter Node (Master)
+System Architecture :
+* Transmitter Node (Master)
 * Reads input from switches
 * Sends CAN messages with specific IDs
 * Displays ON/OFF status on LCD
 
-🔹 Receiver Nodes (Slaves)
+🔹Receiver Nodes (Slaves)
 Each node listens for a specific CAN message ID:
 
 | Node   | CAN ID | Function       |
@@ -27,7 +27,7 @@ Each node listens for a specific CAN message ID:
 | Buzzer | 0x250  | Control buzzer |
 | Wiper  | 0x350  | Control motor  |
 
- 🔄 Working Principle
+ Working Principle :
 
 1. System initializes LCD and CAN module
 2. Displays menu:
@@ -41,7 +41,7 @@ Each node listens for a specific CAN message ID:
    * Matches ID
    * Performs action (ON/OFF device)
 
-🧩 Hardware Components
+Hardware Components :
 
 * LPC2129 ARM Microcontroller
 * CAN Transceiver (e.g., MCP2551)
@@ -52,15 +52,14 @@ Each node listens for a specific CAN message ID:
 * Wiper Motor (or DC motor)
 * Power Supply
 
-💻 Software & Tools
+Software & Tools :
 
 * Embedded C
 * Keil µVision IDE
 * Flash Magic
 
- 📂 Project Structure
-
-```
+ Project Structure :
+ 
 CAN-Body-Control-Module/
 │── transmitter/
 │   └── main.c
@@ -76,7 +75,7 @@ CAN-Body-Control-Module/
 │   ├── delay.h
 │── README.md
 ```
-🔌 Pin Configuration
+Pin Configuration :
 
 | Component         | Pin   |
 | ----------------- | ----- |
@@ -87,7 +86,7 @@ CAN-Body-Control-Module/
 | Buzzer Output     | P0.12 |
 | Wiper Output      | P0.11 |
 
-📡 CAN Message Format
+CAN Message Format :
 
 | Field | Description                               |
 | ----- | ----------------------------------------- |
@@ -96,17 +95,9 @@ CAN-Body-Control-Module/
 | DLC   | Data length (1 byte)                      |
 | DATA  | ON/OFF state                              |
 
-🚀 Future Enhancements
+ Future Enhancements :
 
 * Add more nodes (Door lock, Headlights)
 * Implement CAN error handling
 * Integrate with IoT dashboard
 * Use RTOS for task scheduling
-
-👨‍💻 Author
-
-Developed as an **Embedded Systems Project**
-Focus: Automotive communication using CAN protocol
-
-📌 Note
-This project demonstrates **real-time distributed control using CAN communication**, widely used in automotive systems like cars and industrial automation.
